@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log("Component got rendered on the screen");
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({ lat: position.coords.latitude });
@@ -21,6 +22,10 @@ class App extends Component {
         });
       }
     );
+  }
+
+  componentDidUpdate() {
+    console.log("Component got updated and rerendered on the screen");
   }
 
   render() {
